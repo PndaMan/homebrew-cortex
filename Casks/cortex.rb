@@ -5,14 +5,14 @@
 # Bump `version` + both sha256 on each release:
 #   shasum -a 256 Cortex_1.0.1_aarch64.dmg
 cask "cortex" do
-  version "1.0.20"
+  version "1.0.21"
 
   on_arm do
-    sha256 "19893eea345c9fc113ee9ddcbbaeb3f8113b00bf23e083f411a57e7134dced2b"
+    sha256 "e20fdc51f8c0f726a26401442b9b1348131e8a701e85f99d062d83cf5fe04b7b"
     url "https://github.com/PndaMan/cortex/releases/download/v#{version}/Cortex_#{version}_aarch64.dmg"
   end
   on_intel do
-    sha256 "848bbd07ec06b2311c1153243ad29a7173e7c86baa8b0ca521a68052870d71b3"
+    sha256 "93e1e9380c4fb57c4710f36a4d678b4d3aebe0f7e12d8d29de4d8873c52ee378"
     url "https://github.com/PndaMan/cortex/releases/download/v#{version}/Cortex_#{version}_x64.dmg"
   end
 
