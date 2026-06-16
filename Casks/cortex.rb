@@ -5,20 +5,24 @@
 # Bump `version` + both sha256 on each release:
 #   shasum -a 256 Cortex_1.0.1_aarch64.dmg
 cask "cortex" do
-  version "1.0.15"
+  version "1.0.16"
 
   on_arm do
-    sha256 "23a900a8efc370f11b8b0c2a13c1b93607d77940248d123b0879d61f42192ce9"
+    sha256 "f1ff379c5935d23a7cfdef6e572f6de14aca60b09ac70e7a7edb8636efd54b17"
     url "https://github.com/PndaMan/cortex/releases/download/v#{version}/Cortex_#{version}_aarch64.dmg"
   end
   on_intel do
-    sha256 "9d2ed59b9b0dbc92c220b3d531a015798381a8ecb2c706489e1729e4d2b87ada"
+    sha256 "bf11cd8b9e32a8eff46cd9dd46156a1c8aec88fd142c9147619d9470ade3367b"
     url "https://github.com/PndaMan/cortex/releases/download/v#{version}/Cortex_#{version}_x64.dmg"
   end
 
   name "Cortex"
   desc "Local-first, open-source NotebookLM alternative — a desktop study OS"
   homepage "https://github.com/PndaMan/cortex"
+
+  # Vital runtime tools so ingestion works the moment Cortex launches:
+  # poppler → pdftotext/pdftoppm (PDF text + page images), ffmpeg → audio.
+  depends_on formula: ["poppler", "ffmpeg"]
 
   app "Cortex.app"
 
